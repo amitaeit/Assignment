@@ -1,19 +1,15 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import axios from 'axios';
-import ReactDOM from "react-dom/client";
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
+import {useNavigate} from 'react-router-dom';
 
 function Signin() {
+  const navigate = useNavigate();
+  
   const myLogin = async (e) => {
     e.preventDefault();
     const email = document.querySelector('#exampleInputEmail1').value;
     const password = document.querySelector('#exampleInputPassword1').value;
-    console.log(email);
 
     try {
       const response = await axios({
@@ -23,7 +19,7 @@ function Signin() {
       })
       if (response.data.code === "1") {
         //navigate to home page
-        alert("Login Successful")
+        navigate("/dashboard");
       }
       else if (response.data.code === "2") {
         //show error on top of sign in page

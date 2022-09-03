@@ -18,7 +18,7 @@ app.get("/", (req, resp) => {
     resp.status(200).json({ msg: "Welcome" });
 })
 
-mongoose.connect('mongodb://localhost:27017')
+mongoose.connect('mongodb://127.0.0.1:27017')
     .then(() => {
         console.log("Connection Successful");
     })
@@ -83,8 +83,4 @@ app.post("/signup", async (req, resp) => {
     }
 
 });
-
-
-
-// user1.save();
 
