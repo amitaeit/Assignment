@@ -9,11 +9,11 @@ Backend Scripts are located in backend directory while front Scripts are located
     cd ../frontend  
     npm install  
 
-2. In order to start the backend server, run the below command -   
+2. In order to start the backend server, run below commands -   
     cd ../backend  
     node index.js  
 
-3. In order to start the frontend app, run the below command -   
+3. In order to start the frontend app, run below commands -   
     cd ../frontend  
     npm start  
 
