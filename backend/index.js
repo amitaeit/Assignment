@@ -9,6 +9,7 @@ const app = express();
 const PORT = 8080;
 
 app.use(cors());
+app.use(express.json())
 
 app.listen(PORT, () => {
     console.log(`Server at ${PORT}`);
@@ -49,10 +50,10 @@ app.get("/login", async (req, resp) => {
 })
 
 app.post("/signup", async (req, resp) => {
-    const firstName = req.query.firstName;
-    const lastName = req.query.lastName;
-    const email = req.query.email;
-    const password = req.query.password;
+    const firstName = req.body.firstName;
+    const lastName = req.body.lastName;
+    const email = req.body.email;
+    const password = req.body.password;
 
     console.log(email)
 

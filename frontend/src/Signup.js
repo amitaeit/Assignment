@@ -9,14 +9,17 @@ function Signup(props) {
         const lastName = document.querySelector('#exampleInputLastName').value;
         const email = document.querySelector('#exampleInputEmail').value;
         const password = document.querySelector('#exampleInputPassword').value;
-        console.log(email);
+        var user = { firstName: firstName, lastName: lastName, email: email, password: password };
+        console.log(user);
+        const jsondata = JSON.stringify(user);
+        console.log(jsondata);
 
         try {
-            const response = await axios({
-                method: "post",
-                url: "http://localhost:8080/signup",
-                params: { firstName, lastName, email, password }
-            })
+            const response = await axios.post('http://localhost:8080/signup', jsondata, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
             if (response.data.code === "1") {
                 alert("User created successfully")
             }
@@ -57,10 +60,10 @@ function Signup(props) {
                         </form>
                     </div>
                 </div>
-                </div>
             </div>
-            );
+        </div>
+    );
 }
 
-            export default Signup;
+export default Signup;
 

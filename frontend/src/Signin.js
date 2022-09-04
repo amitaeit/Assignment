@@ -23,7 +23,7 @@ function Signin() {
       }
       else if (response.data.code === "2") {
         //show error on top of sign in page
-        alert("Login Failed");
+        alert("Login Failed: Incorrect Password");
       }
       else if (response.data.code === "3") {
         alert("User not found");
