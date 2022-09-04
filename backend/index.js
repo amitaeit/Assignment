@@ -79,6 +79,7 @@ app.post("/signup", async (req, resp) => {
     }
 
     catch (err) {
+        console.log(err);
         resp.send({ code: "3", message: err })
     }
 

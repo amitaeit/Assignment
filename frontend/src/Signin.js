@@ -1,11 +1,11 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import axios from 'axios';
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function Signin() {
   const navigate = useNavigate();
-  
+
   const myLogin = async (e) => {
     e.preventDefault();
     const email = document.querySelector('#exampleInputEmail1').value;
@@ -36,19 +36,23 @@ function Signin() {
 
   return (
     <div className="container">
-      <div className="row">
-        <h1 className="text-center">Sign In</h1>
-        <form onSubmit={myLogin}>
-          <div className="form-group" >
-            <label htmlFor="exampleInputEmail1">Email address</label>
-            <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required />
+      <div className="card login-form mx-auto">
+        <div className="card-body">
+          <h2 className='card-title text-center'>Login</h2>
+          <div className='card-text'>
+            <form onSubmit={myLogin}>
+              <div className="form-group" >
+                <label htmlFor="exampleInputEmail1">Email address</label>
+                <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required />
+              </div>
+              <div className="form-group">
+                <label htmlFor="exampleInputPassword1">Password</label>
+                <input type="password" className="form-control" id="exampleInputPassword1" required />
+              </div>
+              <button type="submit" className="btn btn-primary">Submit</button>
+            </form>
           </div>
-          <div className="form-group">
-            <label htmlFor="exampleInputPassword1">Password</label>
-            <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" required />
-          </div>
-          <button type="submit" className="btn btn-primary">Submit</button>
-        </form>
+        </div>
       </div>
     </div>
   );

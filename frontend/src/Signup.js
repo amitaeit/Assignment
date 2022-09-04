@@ -32,31 +32,35 @@ function Signup(props) {
 
     return (
         <div className="container">
-            <div className="row">
-                <h1 className="text-center">Sign Up</h1>
-                <form onSubmit={signup}>
-                    <div className="form-group" >
-                        <label htmlFor="exampleInputFirstName">First Name</label>
-                        <input type="text" className="form-control" id="exampleInputFirstName" placeholder="Enter First Name" required />
+            <div className="card signup-form mx-auto">
+                <div className="card-body">
+                    <h2 className='card-title text-center'>Sign Up</h2>
+                    <div className='card-text'>
+                        <form onSubmit={signup}>
+                            <div className="form-group" >
+                                <label htmlFor="exampleInputFirstName">First Name</label>
+                                <input type="text" className="form-control" id="exampleInputFirstName" required />
+                            </div>
+                            <div className="form-group" >
+                                <label htmlFor="exampleInputLastName">Last Name</label>
+                                <input type="text" className="form-control" id="exampleInputLastName" required />
+                            </div>
+                            <div className="form-group" >
+                                <label htmlFor="exampleInputEmail">Email address</label>
+                                <input type="email" className="form-control" id="exampleInputEmail" required />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="exampleInputPassword">Password</label>
+                                <input type="password" className="form-control" id="exampleInputPassword" required />
+                            </div>
+                            <button type="submit" className="btn btn-primary">Submit</button>
+                        </form>
                     </div>
-                    <div className="form-group" >
-                        <label htmlFor="exampleInputLastName">Last Name</label>
-                        <input type="text" className="form-control" id="exampleInputLastName" placeholder="Enter Last Name" required />
-                    </div>
-                    <div className="form-group" >
-                        <label htmlFor="exampleInputEmail">Email address</label>
-                        <input type="email" className="form-control" id="exampleInputEmail" placeholder="Enter Email" required />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="exampleInputPassword">Password</label>
-                        <input type="password" className="form-control" id="exampleInputPassword" placeholder="Enter Password" required />
-                    </div>
-                    <button type="submit" className="btn btn-primary">Submit</button>
-                </form>
+                </div>
+                </div>
             </div>
-        </div>
-    );
+            );
 }
 
-export default Signup;
+            export default Signup;
 
